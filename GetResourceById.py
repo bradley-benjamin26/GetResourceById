@@ -23,9 +23,6 @@ headers = {'X-ArchivesSpace-Session':session}
 #checks to see if connection was sucessful or reports any error
 if response.status_code==200:
     try:
-        #id = ''
-       # repo_id = '2'
-        #resolve = ''
         query = requests.get(f'{aspace_url}/repositories/2/resources/{resource_id}/ordered_records', headers=headers)
         data =json.loads(query.text)
         #normalizes JSON data. Moves parsing to the record level and skips the uris parent element in the JSON response
